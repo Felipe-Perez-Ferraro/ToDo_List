@@ -1,3 +1,119 @@
-.hello {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.toDo__section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.toDo__container {
+  border: 1px solid rgb(236, 236, 236);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 200px;
+}
+
+.toDo__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.toDo__header__title {
+  color: #6a6a6a;
+  font-weight: 500;
+}
+
+.fa-arrows-rotate {
+  cursor: pointer;
+  color: #a5a5a5;
+}
+
+.toDo__add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.toDo__add__input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #a5a5a5;
+  font-style: italic;
+  width: 100%;
+}
+
+.toDo__add__input::placeholder {
+  color: #a5a5a5;
+  font-style: italic;
+}
+
+.fa-share {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #a5a5a5;
+}
+
+.toDo__list__container {
+  list-style: none;
+}
+
+.toDo__list__item {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding: 12px 20px;
+}
+
+.toDo__list__itemContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.toDo__list__task {
+  color: #6a6a6a;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #a5a5a5;
+}
+
+.fa-square-check {
+  color: rgb(0, 176, 0);
+  cursor: pointer;
+}
+
+.fa-square {
+  color: #a5a5a5;
+  cursor: pointer;
+}
+
+.fa-square:hover {
+  color: #797979;
+}
+
+.toDo__clear__button {
+  cursor: pointer;
+  display: block;
+  margin: 1.5rem auto;
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+  font-size: 16px;
+}
+
+.toDo__clear__button:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
