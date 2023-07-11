@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>To Do List</title>
 <script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
 <body>
-    <h1 class="hello">Hello webpack!</h1>
-    <h2>example</h2>
-    <a href="#">link</a>
+    <section class="toDo__section">
+        <article class="toDo__container">
+            <header class="toDo__header">
+                <h1 class="toDo__header__title">To Do List!</h1>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </header>
+            <form id="addList" class="toDo__add">
+                <input 
+                    type="text" 
+                    name="add" 
+                    id="addInput" 
+                    class="toDo__add__input"
+                    placeholder="Add to your list..."
+                    required
+                >
+                <button 
+                    type="submit" 
+                    id="toDoSubmit"
+                    class="fa-solid fa-share"
+                    value=""
+                >
+                <i class="fa-solid fa-share"></i>
+                </button>
+            </form>
+        </article>
+    </section>
 </body>
 </html>
