@@ -73,7 +73,7 @@ const removeTask = (el) => {
     tasks.forEach((task, index) => {
       if (task.id === taskId) {
         tasks.splice(index, 1);
-        for (let i = index; i < tasks.length; i++) {
+        for (let i = index; i < tasks.length; i + 1) {
           tasks[i].id -= 1;
         }
       }
@@ -88,37 +88,36 @@ const editTask = (el) => {
     const taskId = Number(el.target.getAttribute('data-id'));
     tasks.forEach((task) => {
       if (task.id === taskId) {
-        description[taskId - 1].removeAttribute('readonly')
+        description[taskId - 1].removeAttribute('readonly');
         description[taskId - 1].select();
 
         description[taskId - 1].addEventListener('keydown', (k) => {
           if (k.key === 'Enter') {
-            description[taskId - 1].setAttribute('readonly', 'readonly')
+            description[taskId - 1].setAttribute('readonly', 'readonly');
             const newTasks = JSON.parse(localStorage.getItem('tasks'));
             newTasks.forEach((task) => {
               if (task.id === taskId) {
                 task.description = description[taskId - 1].value;
               }
-            })
-            tasks = newTasks
+            });
+            tasks = newTasks;
             printTasks();
           }
-        })
+        });
       }
-    })
+    });
   }
-}  
+};
 
+tasksContainer.addEventListener('click', completeTask);
+tasksContainer.addEventListener('click', removeTask);
+tasksContainer.addEventListener('click', editTask);
 toDoSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   setTask();
   printTasks();
   addList.reset();
-  console.log(tasks);
 });
-tasksContainer.addEventListener('click', completeTask);
-tasksContainer.addEventListener('click', removeTask);
-tasksContainer.addEventListener('click', editTask);
 removeAll.addEventListener('click', () => {
   tasks = [];
   printTasks();
