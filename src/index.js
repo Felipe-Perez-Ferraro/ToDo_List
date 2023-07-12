@@ -32,7 +32,7 @@ const printTasks = () => {
     `
           <div class="toDo__list__itemContainer marked">
           <i data-id="${task.id}" class="fa-solid fa-square-check completed"></i>
-          <p class="toDo__description checked">${task.description}</p>
+          <label class="toDo__description checked">${task.description}</label>
           </div>
           `
   ) : (
@@ -40,11 +40,11 @@ const printTasks = () => {
           <div class="sides__container">
             <div class="toDo__left">
               <i data-id="${task.id}" class="fa-regular fa-square completed" title="Mark as complete"></i>
-              <p class="toDo__description">${task.description}</p>
+              <textarea name="textarea" class="toDo__description" cols="30" rows="1" readonly>${task.description}</textarea>
             </div>
             <div class="toDo__right">
               <i data-id="${task.id}" class="fa-solid fa-trash-can remove" title="Delete Task"></i>
-              <i class="fa-solid fa-pen-to-square" title="Edit Task"></i>
+              <i data-id="${task.id}" class="fa-solid fa-pen-to-square edit" title="Edit Task"></i>
             </div> 
           </div>
           `)}
@@ -80,19 +80,34 @@ const removeTask = (el) => {
     });
   }
   printTasks();
-  console.log(tasks);
 };
 
-// const removeTask = () => {
-//   const completeTask = document.querySelectorAll('.marked')
-//   tasks.forEach((it) => {
-//     if (it.completed === true) {
-//       completeTask.forEach((el) => {
-//         el.remove()
-//       });
-//     }
-//   });
-// }
+const editTask = (el) => {
+  const description = document.querySelectorAll('.toDo__description');
+  if (el.target.classList.contains('edit')) {
+    const taskId = Number(el.target.getAttribute('data-id'));
+    tasks.forEach((task) => {
+      if (task.id === taskId) {
+        description[taskId - 1].removeAttribute('readonly')
+        description[taskId - 1].select();
+
+        description[taskId - 1].addEventListener('keydown', (k) => {
+          if (k.key === 'Enter') {
+            description[taskId - 1].setAttribute('readonly', 'readonly')
+            const newTasks = JSON.parse(localStorage.getItem('tasks'));
+            newTasks.forEach((task) => {
+              if (task.id === taskId) {
+                task.description = description[taskId - 1].value;
+              }
+            })
+            tasks = newTasks
+            printTasks();
+          }
+        })
+      }
+    })
+  }
+}  
 
 toDoSubmit.addEventListener('click', (e) => {
   e.preventDefault();
@@ -103,6 +118,7 @@ toDoSubmit.addEventListener('click', (e) => {
 });
 tasksContainer.addEventListener('click', completeTask);
 tasksContainer.addEventListener('click', removeTask);
+tasksContainer.addEventListener('click', editTask);
 removeAll.addEventListener('click', () => {
   tasks = [];
   printTasks();
