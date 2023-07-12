@@ -53,7 +53,6 @@ const printTasks = () => {
     });
   }
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  console.log(tasks);
 };
 
 const completeTask = (e) => {
@@ -124,7 +123,7 @@ removeAll.addEventListener('click', () => {
   printTasks();
 });
 document.addEventListener('DOMContentLoaded', () => {
-  const data = JSON.parse(localStorage.getItem('tasks'));
+  const data = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks = data;
   printTasks();
 });
