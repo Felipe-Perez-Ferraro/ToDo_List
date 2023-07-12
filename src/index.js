@@ -11,11 +11,11 @@ let tasks = [];
 
 const setTask = () => {
   const task = {
-    id: tasks.length + 1,
+    id: tasks?.length + 1,
     description: addInput.value,
     completed: false,
   };
-  tasks = [...tasks, task];
+  tasks = [...tasks,task];
 };
 
 const printTasks = () => {
@@ -23,7 +23,7 @@ const printTasks = () => {
     tasksContainer.removeChild(tasksContainer.firstChild);
   }
 
-  if (tasks.length > 0) {
+  if (tasks?.length > 0) {
     tasks.forEach((task) => {
       const li = document.createElement('li');
       li.classList.add('toDo__list__item');
@@ -53,6 +53,7 @@ const printTasks = () => {
     });
   }
   localStorage.setItem('tasks', JSON.stringify(tasks));
+  console.log(tasks)
 };
 
 const completeTask = (e) => {
