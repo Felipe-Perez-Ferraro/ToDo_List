@@ -25,7 +25,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n// import _ from 'lodash';\n\n\n// function component() {\n//   const element = document.createElement('div');\n\n//   // Lodash, now imported by this script\n//   element.innerHTML = _.join(['Hello', 'world'], ' ');\n//   element.classList.add('hello');\n\n//   return element;\n// }\n\n// document.body.appendChild(component());\n\n//# sourceURL=webpack://todo_list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst tasksContainer = document.getElementById('tasksContainer');\n\nconst tasks = [\n  {\n    description: 'Play Football',\n    completed: false,\n    index: 1\n  }\n]\n\nconst printTask = (task) => {\n  const {description, completed, index: id} = task;\n  const innerHTML = `\n    <p>${completed ? 'completed' : 'not completed'}</p>\n    <p>${description}</p>\n  `\n  const newList = document.createElement('li');\n  newList.classList.add('toDo__list__item');\n  Object.assign(newList, {innerHTML, id})\n  tasksContainer.appendChild(newList);\n}\n\n//# sourceURL=webpack://todo_list/./src/index.js?");
 
 /***/ })
 
