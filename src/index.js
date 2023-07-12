@@ -15,7 +15,7 @@ const setTask = () => {
     description: addInput.value,
     completed: false,
   };
-  tasks = [...tasks,task];
+  tasks = [...tasks, task];
 };
 
 const printTasks = () => {
@@ -53,7 +53,7 @@ const printTasks = () => {
     });
   }
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  console.log(tasks)
+  console.log(tasks);
 };
 
 const completeTask = (e) => {
