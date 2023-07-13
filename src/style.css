@@ -34,6 +34,11 @@
 .fa-arrows-rotate {
   cursor: pointer;
   color: #a5a5a5;
+  transition: 0.5s;
+}
+
+.fa-arrows-rotate:hover {
+  transform: rotate(180deg);
 }
 
 .toDo__add {
@@ -77,6 +82,21 @@
 .toDo__list__itemContainer {
   display: flex;
   align-items: center;
+}
+
+.sides__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toDo__left {
+  display: flex;
+  align-items: center;
+}
+
+.toDo__right {
+  display: flex;
   gap: 14px;
 }
 
@@ -84,9 +104,20 @@
   color: #6a6a6a;
 }
 
+.toDo__description {
+  margin-left: 14px;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+}
+
 .checked {
   text-decoration: line-through;
   color: #a5a5a5;
+  margin-left: 10px;
 }
 
 .fa-square-check {
@@ -101,6 +132,24 @@
 
 .fa-square:hover {
   color: #797979;
+}
+
+.fa-trash-can {
+  cursor: pointer;
+  color: red;
+}
+
+.fa-trash-can:hover {
+  color: rgb(181, 0, 0);
+}
+
+.fa-pen-to-square {
+  cursor: pointer;
+  color: coral;
+}
+
+.fa-pen-to-square:hover {
+  color: rgb(251, 92, 34);
 }
 
 .toDo__clear__button {
