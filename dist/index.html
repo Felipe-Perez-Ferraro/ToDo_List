@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>To Do List</title>
+<script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+<body>
+    <section class="toDo__section">
+        <article class="toDo__container">
+            <header class="toDo__header">
+                <h1 class="toDo__header__title">To Do List!</h1>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </header>
+            <form id="addList" class="toDo__add">
+                <input 
+                    type="text" 
+                    name="add" 
+                    id="addInput" 
+                    class="toDo__add__input"
+                    placeholder="Add to your list..."
+                    required
+                >
+                <button 
+                    type="submit" 
+                    id="toDoSubmit"
+                    class="fa-solid fa-share"
+                    value=""
+                >
+                </button>
+            </form>
+            <ul id="tasksContainer" class="toDo__list__container">
+                
+            </ul>
+            <button id="clearTasks" class="toDo__clear__button" type="button">Clear all completed</button>
+        </article>
+    </section>
+</body>
+</html>
