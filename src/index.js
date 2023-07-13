@@ -31,8 +31,8 @@ const printTasks = () => {
         ${task.completed ? (
     `
           <div class="toDo__list__itemContainer marked">
-          <i data-id="${task.id}" class="fa-solid fa-square-check completed"></i>
-          <label class="toDo__description checked">${task.description}</label>
+            <i data-id="${task.id}" class="fa-solid fa-square-check completed"></i>
+            <label class="toDo__description checked">${task.description}</label>
           </div>
           `
   ) : (
