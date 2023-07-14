@@ -123,11 +123,13 @@
 .fa-square-check {
   color: rgb(0, 176, 0);
   cursor: pointer;
+  font-size: 14px;
 }
 
 .fa-square {
   color: #a5a5a5;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .fa-square:hover {
@@ -165,4 +167,11 @@
 .toDo__clear__button:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.toDo__error__message {
+  text-align: center;
+  margin-top: 40px;
+  color: #6a6a6a;
+  display: none;
 }
