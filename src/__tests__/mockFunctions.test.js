@@ -30,4 +30,34 @@ describe('To Do List', () => {
     testTask.editTask(3, 'task one edited');
     expect(testTask.object.description).toBe('task one edited');
   });
+
+  it('Should update the status', () => {
+    const testTask = new ToDo();
+    const testObj = {
+      id: 1,
+      description: 'task one',
+      completed: false
+    }
+    testTask.updateStatus(testObj.completed)
+    const satusExpected = true;
+    expect(testTask.object.completed).toStrictEqual(satusExpected);
+  });  
+
+  it('Should remove the Complete tasks', () => {
+    const testTask = new ToDo();
+    testTask.arr = [
+      {
+        id: 1,
+        description: 'task one',
+        completed: true
+      },
+      {
+        id: 2,
+        description: 'task two',
+        completed: false
+      },
+    ]
+    testTask.removeComplete(...testTask.arr)
+    console.log(testTask.arr)
+  })
 });

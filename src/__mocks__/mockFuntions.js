@@ -21,4 +21,21 @@ export default class ToDo {
       this.object.description = newTask;
     }
   }
+  
+  updateStatus(boolean) {
+    let initialSatus = true;
+
+    if (boolean === initialSatus) {
+      boolean = !initialSatus;
+      this.object.completed = boolean;
+    } else {
+      boolean = initialSatus;
+      this.object.completed = boolean;
+    }
+  }
+
+  removeComplete(...testTask) {
+    // Object.keys(this.object).filter((task) => !task.completed)
+    testTask.filter((task) => !task.completed)
+  }
 }
