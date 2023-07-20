@@ -26,7 +26,7 @@ describe('localStorageUtil', () => {
 
   it('should save data to local storage', () => {
     const key = 'testKey';
-    const data = { foo: 'bar' };
+    const data = { testVariable: 'testString' };
     saveDataToLocal(key, data);
 
     expect(localStorage.getItem(key)).toBe(JSON.stringify(data));
@@ -34,7 +34,7 @@ describe('localStorageUtil', () => {
 
   it('should get data from local storage', () => {
     const key = 'testKey';
-    const data = { foo: 'bar' };
+    const data = { testVariable: 'testString' };
 
     localStorage.setItem(key, JSON.stringify(data));
 
