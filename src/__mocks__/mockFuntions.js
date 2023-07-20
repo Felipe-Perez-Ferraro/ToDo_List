@@ -2,9 +2,9 @@ export default class ToDo {
   constructor() {
     this.arr = [];
     this.object = {
-      index : 1,
-      description : 'description',
-      completed : false,
+      index: 1,
+      description: 'description',
+      completed: false,
     };
   }
 
@@ -16,14 +16,14 @@ export default class ToDo {
     this.arr.splice(0, taskName);
   }
 
-  editTask (index, newTask) {
+  editTask(index, newTask) {
     if (this.object.index === index) {
       this.object.description = newTask;
     }
   }
-  
+
   updateStatus(boolean) {
-    let initialSatus = true;
+    const initialSatus = true;
 
     if (boolean === initialSatus) {
       boolean = !initialSatus;
@@ -34,8 +34,7 @@ export default class ToDo {
     }
   }
 
-  removeComplete(...testTask) {
-    // Object.keys(this.object).filter((task) => !task.completed)
-    testTask.filter((task) => !task.completed)
+  removeComplete(...testArr) {
+    this.arr = testArr.filter((task) => !task.completed);
   }
 }
