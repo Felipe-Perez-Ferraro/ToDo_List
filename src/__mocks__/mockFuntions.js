@@ -4,7 +4,7 @@ export default class ToDo {
   }
 
   addTask(task) {
-    this.arr.push(task)
+    this.arr.push(task);
   }
 
   removeTask(taskName) {

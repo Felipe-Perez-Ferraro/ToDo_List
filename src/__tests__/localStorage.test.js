@@ -1,4 +1,4 @@
-import { saveDataToLocal, getDataFromLocal } from "../__mocks__/localStorage";
+import { saveDataToLocal, getDataFromLocal } from '../__mocks__/localStorage';
 
 const localStorageMock = (() => {
   let store = {};
