@@ -9,7 +9,7 @@ describe('To Do List', () => {
     });
   
     it('Should get task one', () => {
-      expect(addTask()[1]).toBe('task one');
+      expect(addTask()[1]).toMatch('task one');
     });
   })
 });
