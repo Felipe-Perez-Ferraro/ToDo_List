@@ -43,21 +43,39 @@ describe('To Do List', () => {
     expect(testTask.object.completed).toStrictEqual(satusExpected);
   });  
 
-  it('Should remove the Complete tasks', () => {
+  it('Should remove tasks with completed property set to true from an array of objects completed value', () => {
     const testTask = new ToDo();
-    testTask.arr = [
+    const testArr = [
       {
         id: 1,
         description: 'task one',
-        completed: true
+        completed: false
       },
       {
         id: 2,
         description: 'task two',
+        completed: true
+      },
+      {
+        id: 3,
+        description: 'task three',
+        completed: false
+      }
+    ];
+    testTask.removeComplete(testArr);
+    const testArrExpected = [
+      {
+        id: 1,
+        description: 'task one',
         completed: false
       },
-    ]
-    testTask.removeComplete(...testTask.arr)
-    console.log(testTask.arr)
-  })
+      {
+        id: 3,
+        description: 'task three',
+        completed: false
+      }
+    ];
+    expect(testArr).toStrictEqual(testArrExpected);
+  });
 });
+

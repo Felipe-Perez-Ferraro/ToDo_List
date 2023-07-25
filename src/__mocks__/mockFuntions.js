@@ -34,8 +34,11 @@ export default class ToDo {
     }
   }
 
-  removeComplete(...testTask) {
-    // Object.keys(this.object).filter((task) => !task.completed)
-    testTask.filter((task) => !task.completed)
+  // remove all completed tasks from the array of objects if completed is true
+  
+  removeComplete(...tasks) {
+    if (this.object.completed === true) {
+      this.arr.splice(0, tasks);
+    }
   }
 }
