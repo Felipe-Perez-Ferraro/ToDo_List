@@ -36,46 +36,23 @@ describe('To Do List', () => {
     const testObj = {
       id: 1,
       description: 'task one',
-      completed: false
-    }
-    testTask.updateStatus(testObj.completed)
+      completed: false,
+    };
+    testTask.updateStatus(testObj.completed);
     const satusExpected = true;
     expect(testTask.object.completed).toStrictEqual(satusExpected);
-  });  
+  });
 
   it('Should remove tasks with completed property set to true from an array of objects completed value', () => {
     const testTask = new ToDo();
     const testArr = [
-      {
-        id: 1,
-        description: 'task one',
-        completed: false
-      },
-      {
-        id: 2,
-        description: 'task two',
-        completed: true
-      },
-      {
-        id: 3,
-        description: 'task three',
-        completed: false
-      }
+      { id: 1, description: 'string', completed: true },
+      { id: 2, description: 'string2', completed: false },
     ];
-    testTask.removeComplete(testArr);
+    testTask.removeComplete(...testArr);
     const testArrExpected = [
-      {
-        id: 1,
-        description: 'task one',
-        completed: false
-      },
-      {
-        id: 3,
-        description: 'task three',
-        completed: false
-      }
+      { id: 2, description: 'string2', completed: false },
     ];
-    expect(testArr).toStrictEqual(testArrExpected);
+    expect(testTask.arr).toStrictEqual(testArrExpected);
   });
 });
-
